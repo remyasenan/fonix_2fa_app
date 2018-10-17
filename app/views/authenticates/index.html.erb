@@ -1,0 +1,13 @@
+<h1>Please enter your mobile number</h1>
+
+<%= form_tag authenticates_token_path do %>
+    <div>
+        <%= text_field_tag :mobile_number %>
+
+      <%= @token %>
+    </div>
+    <div>
+        <%= submit_tag 'Confirm' %>
+    </div>
+
+<% end %>
