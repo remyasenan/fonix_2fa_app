@@ -1,14 +1,18 @@
-<h1>Please enter your token</h1>
-
-<%= form_tag authenticates_index_path do %>
-    <div>
-      <%= text_field_tag :token %>
-      <%= @token_generated %>
-      <%= hidden_field_tag 'token_generated', @token_generated  %>
+<div>
+    <div align="center">
+    <h1>Please enter your token</h1>
     </div>
-    <div>
-      <%= submit_tag "Validate" %>
+    <div align="center">
+    <%= form_tag authenticates_index_path do %>
+        <div>
+          <%= text_field_tag :token %>
+          <%= hidden_field_tag 'token_generated', @token_generated  %>
+        </div>
+        <div>
+          <%= submit_tag "Validate" %>
+        </div>
+
+
+    <% end %>
     </div>
-
-
-<% end %>
+</div>

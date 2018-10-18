@@ -6,19 +6,15 @@ class AuthenticatesController < ApplicationController
     # @token = TokenGenerator.generate
 
     if params[:token_generated] && params[:token] && params[:token_generated] == params[:token]
-      redirect_to authenticates_success_path, flash: {success: 'Some message.'}
+      redirect_to authenticates_success_path
     else
-      render authenticates_index_path
+      render authenticates_index_path, flash: {error: 'Wrong token entered!!!'}
     end
-    p "ttttttttttttttttttttttttttttttttttttttttttt"
-    p params[:token_generated]
-    p params[:token]
-    # redirect_to :action => token
   end
 
   def token
     @token_generated = TokenGenerator.generate
-  # SmsSender.zensend_send_sms(verification_token,params[:mobile_number])
+    # SmsSender.zensend_send_sms(@token_generated,params[:mobile_number])
 
   end
 
