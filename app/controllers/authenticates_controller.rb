@@ -14,7 +14,7 @@ class AuthenticatesController < ApplicationController
 
   def token
     @token_generated = TokenGenerator.generate
-    # SmsSender.zensend_send_sms(@token_generated,params[:mobile_number])
+    SmsSender.zensend_send_sms(@token_generated,params[:mobile_number])
 
   end
 
